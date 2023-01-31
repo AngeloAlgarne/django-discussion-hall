@@ -3,18 +3,24 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-'''
-Table Room with attributes: name, description, last_updated, created
-'''
-class Topic(models.Model):
-    name = models.CharField(max_length=200)
-    
-    def __str__(self):
-        return self.name
 
 '''
 Table Room with attributes: name, description, last_updated, created
 '''
+
+
+class Topic(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
+'''
+Table Room with attributes: name, description, last_updated, created
+'''
+
+
 class Room(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
@@ -23,23 +29,28 @@ class Room(models.Model):
     # participants =
     last_updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    
+
+    # class Meta has reserved words
+    class Meta:
+        # show order in descending order, or from newest to oldest
+        ordering = ['-last_updated', '-created']
+
     def __str__(self):
         return self.name
-    
+
+
 '''
 Table Discussion with attributes: user, room, body, last_updated, created
 '''
+
+
 class Discussion(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     body = models.TextField()
-    
+
     last_updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return self.body[0:50] + '...'
-    
-    
-    

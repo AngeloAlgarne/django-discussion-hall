@@ -1,0 +1,12 @@
+{% extends 'index.html' %} {% block content %}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p>Permanently delete "{{object}}"?</p>
+        <input type="button" value="Cancel" onclick="window.location.href='{{request.META.HTTP_REFERER}}'" />
+        <input type="submit" value="Confirm" />
+    </form>
+</div>
+
+{% endblock content %}
