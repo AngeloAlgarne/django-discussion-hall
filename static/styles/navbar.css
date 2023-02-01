@@ -1,0 +1,19 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    padding: 25px;
+}
+
+.leftContainer {
+    margin-left: 5%;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-around;
+    margin-right: 5%;
+}

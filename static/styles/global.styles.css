@@ -1,0 +1,32 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.buttons {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.buttons:hover {
+    text-decoration: none;
+    color: black;
+    background-color: darkgray;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0px 5%;
+    background-color: whitesmoke;
+}
+
+.pageTitleContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

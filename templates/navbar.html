@@ -1,15 +1,16 @@
-<div>
+<div class="leftContainer">
+    <a class="buttons" href="/">Angelo</a>
+</div>
+<div class="rightContainer">
     <div>
-        <a href='/'>
-            Angelo
-        </a>
+        <form method="GET" action="{% url 'home' %}">
+            <input type="text" name="q" placeholder="search" />
+        </form>
     </div>
     <div>
-        <a href='/'>
-            Home
-        </a>
-        <a href='/room'>
-            Room
-        </a>
+        <a class="buttons" href="/">Home</a>
+    </div>
     <div>
+        <a class="buttons" href="{% url 'create-room' %}">New Room</a>
+    </div>
 </div>

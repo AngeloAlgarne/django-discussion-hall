@@ -1,0 +1,31 @@
+
+.pageGrid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+}
+
+.topicsList {
+    display: flex;
+    flex-direction: column;
+}
+
+.topicContainer {
+    padding: 20px;   
+}
+
+.roomContainer {
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 100px;
+    background-color: beige;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
